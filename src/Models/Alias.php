@@ -21,4 +21,12 @@ class Alias extends Model implements EntityContract
         $this->ini('amethyst.alias.data.alias');
         parent::__construct($attributes);
     }
+
+    /**
+     * Get all of the owning aliasable models.
+     */
+    public function aliasable()
+    {
+        return $this->morphTo();
+    }
 }

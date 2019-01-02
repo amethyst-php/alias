@@ -16,6 +16,10 @@ class CreateAliasesTable extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description')->nullable();
+            $table->string('locale')->nullable();
+            $table->integer('weight')->default(0);
+            $table->string('aliasable_type');
+            $table->integer('aliasable_id');
             $table->timestamps();
             $table->softDeletes();
         });

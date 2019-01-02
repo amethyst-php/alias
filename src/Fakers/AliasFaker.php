@@ -18,6 +18,10 @@ class AliasFaker extends Faker
         $bag = new Bag();
         $bag->set('name', $faker->name);
         $bag->set('description', $faker->text);
+        $bag->set('locale', 'en_US');
+        $bag->set('weight', 20);
+        $bag->set('aliasable_type', \Railken\Amethyst\Models\Foo::class);
+        $bag->set('aliasable', FooFaker::make()->parameters()->toArray());
 
         return $bag;
     }
