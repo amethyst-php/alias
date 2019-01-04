@@ -14,7 +14,7 @@ class CreateAliasesTable extends Migration
     {
         Schema::create(Config::get('amethyst.alias.data.alias.table'), function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name');
             $table->text('description')->nullable();
             $table->string('locale')->nullable();
             $table->integer('weight')->default(0);
