@@ -10,8 +10,5 @@ return [
     'validator'  => Railken\Amethyst\Validators\AliasValidator::class,
     'authorizer' => Railken\Amethyst\Authorizers\AliasAuthorizer::class,
     'faker'      => Railken\Amethyst\Fakers\AliasFaker::class,
-    'manager'    => Railken\Amethyst\Managers\AliasManager::class,
-    'aliasables' => [
-        Railken\Amethyst\Models\Foo::class => Railken\Amethyst\Managers\FooManager::class,
-    ],
+    'manager'    => Railken\Amethyst\Managers\AliasManager::class
 ];

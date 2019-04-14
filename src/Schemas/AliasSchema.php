@@ -22,12 +22,12 @@ class AliasSchema extends Schema
             Attributes\LongTextAttribute::make('description'),
             Attributes\LocaleAttribute::make(),
             Attributes\NumberAttribute::make('weight'),
-            Attributes\EnumAttribute::make('aliasable_type', array_keys(Config::get('amethyst.alias.data.alias.aliasables')))
+            Attributes\EnumAttribute::make('aliasable_type', app('amethyst')->getMorphListable('alias', 'aliasable'))
                 ->setRequired(true),
             Attributes\MorphToAttribute::make('aliasable_id')
                 ->setRelationKey('aliasable_type')
                 ->setRelationName('aliasable')
-                ->setRelations(Config::get('amethyst.alias.data.alias.aliasables'))
+                ->setRelations(app('amethyst')->getMorphRelationable('alias', 'aliasable'))
                 ->setRequired(true),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),

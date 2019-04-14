@@ -20,7 +20,7 @@ class AliasFaker extends Faker
         $bag->set('description', $faker->text);
         $bag->set('locale', 'en_US');
         $bag->set('weight', 20);
-        $bag->set('aliasable_type', \Railken\Amethyst\Models\Foo::class);
+        $bag->set('aliasable_type', 'foo');
         $bag->set('aliasable', FooFaker::make()->parameters()->toArray());
 
         return $bag;
