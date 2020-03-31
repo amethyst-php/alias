@@ -21,7 +21,7 @@ class AliasSchema extends Schema
             Attributes\LongTextAttribute::make('description'),
             Attributes\LocaleAttribute::make(),
             Attributes\NumberAttribute::make('weight'),
-            Attributes\EnumAttribute::make('aliasable_type', app('amethyst')->getDataNames())
+            \Amethyst\Core\Attributes\DataNameAttribute::make('aliasable_type')
                 ->setRequired(true),
             Attributes\MorphToAttribute::make('aliasable_id')
                 ->setRelationKey('aliasable_type')

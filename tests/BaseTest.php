@@ -11,8 +11,6 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
     {
         parent::setUp();
 
-        app('amethyst')->pushMorphRelation('alias', 'aliasable', 'foo');
-
         $this->artisan('migrate:fresh');
     }
 
